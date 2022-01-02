@@ -1,4 +1,14 @@
-<h1>login component</h1>
-<button (click)="loginWithGoogle()" mat-raised-button class="google-login-btn">
-    Google
-  </button>   
+
+<div class="d-flex justify-start items-center flex-column vh-100">
+  <div class="position-relative w-100 h-100">
+    <video class="video-cover" loop autoplay muted  oncanplay="this.play()" onloadedmetadata="this.muted = true">
+      <source src="../../assets/share.mp4" type="video/mp4"> 
+    </video>
+    <div class="position-absolute top-50 start-50">
+      <button (click)="loginWithGoogle()" class="btn btn-success">
+        Google
+      </button>    
+    </div>
+  </div>
+</div>
+ 
