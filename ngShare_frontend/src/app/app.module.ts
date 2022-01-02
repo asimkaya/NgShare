@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { SocialLoginModule, SocialAuthServiceConfig, GoogleLoginProvider  } from 'angularx-social-login';
+import { SocialLoginModule, SocialAuthServiceConfig, GoogleLoginProvider } from 'angularx-social-login';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuardService } from './auth-guard.service';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -25,18 +26,18 @@ import { AuthGuardService } from './auth-guard.service';
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
-        autoLogin: false,
+        autoLogin: true,
         providers: [
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              '398635372316-hq2sjc9e4bb9r8g64djp27erps9ddn0k.apps.googleusercontent.com'
+              environment.googleClientId
             )
           }
         ]
-      } 
+      }
     },
-   AuthGuardService],
+    AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

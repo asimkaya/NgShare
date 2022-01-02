@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SocialAuthServiceConfig } from 'angularx-social-login';
 import { AuthGuardService } from './auth-guard.service';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
