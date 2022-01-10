@@ -17,10 +17,12 @@ export class LoginComponent implements OnInit {
   loginWithGoogle(): void {
     this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
       (data) => {
-        localStorage.setItem('user', JSON.stringify(data))
+        localStorage.setItem('user', JSON.stringify(data));
         this.router.navigate(['home']);
       }
-    )
+    ).catch((err) => {
+      console.warn(err);
+    })
   }
 
 }
