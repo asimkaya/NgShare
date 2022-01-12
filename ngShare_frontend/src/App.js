@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
+import {Routes,Route, useNavigate} from 'react-router-dom';
 
 const App = () => {
     return (
-        <div className='text-3x1 font-bold underline'>
-            Hello World
-        </div>
+        <Routes>
+            <Route path="login" element={<Login/>}/>
+            <Route path="/*" element={<Home/>}/>
+        </Routes>
     )
 }
 
